@@ -1,5 +1,7 @@
 Negation and Natural Language Inference
 ===================================================================
+This repository contains code of the EMNLP2020 paper "An Analysis of Natural Language Inference Benchmarks through the Lens of Negation". Paper link: https://www.aclweb.org/anthology/2020.emnlp-main.732.pdf  
+Authors: Md Mosharaf Hossain, Venelin Kovatchev, Pranoy Dutta, Tiffany Kao, Elizabeth Wei and Eduardo Blanco  
 
 ## Data Requirements
 Download RTE, SNLI, and MNLI using "download_glue_data.py" script of https://github.com/nyu-mll/GLUE-baselines.
@@ -29,29 +31,29 @@ mkdir outputs/predictions
 mkdir outputs/models
 ```
 
-### Fine-tune the transformers using RTE training split and evaluate on the RTE dev split:  
+Fine-tune the transformers using RTE training split and evaluate on the RTE dev split:  
 ```bash
 sh rte-train.sh
 ```
-### Fine-tune the transformers using SNLI training split and evaluate on the SNLI dev split:
+Fine-tune the transformers using SNLI training split and evaluate on the SNLI dev split:
 ```bash
 sh snli-train.sh
 ```
-### Fine-tune the transformers using MNLI training split and evaluate on the MNLI dev split:
+Fine-tune the transformers using MNLI training split and evaluate on the MNLI dev split:
 ```bash
 sh mnli-train.sh
 ```
 
 ## Evaluate the fine-tuned systems on new benchmarks containing negations
-### Evaluate on new RTE benchmark 
+Evaluate on new RTE benchmark  
 ```bash
 sh rte-evaluate.sh
 ```
-###  Evaluate on new SNLI benchmark 
+Evaluate on new SNLI benchmark  
 ```bash
 sh snli-evaluate.sh
 ```
-### Evaluate on new MNLI benchmark 
+Evaluate on new MNLI benchmark  
 ```bash
 sh mnli-evaluate.sh
 ```
@@ -67,9 +69,16 @@ Results (Table 7 of our paper) can be achieved by the below script.
 	  --corpus: Name of the corpus (e.g., rte or snli or mnli), (required)
   
 
+## New NLI benchmarks containing negation
+The annotation files for the new NLI benchmarks containing negation are given below.  
+RTE: ./data/new_benchmarks/clean_data/RTE.txt  
+SNLI: ./data/new_benchmarks/clean_data/SNLI.txt  
+MNLI: ./data/new_benchmarks/clean_data/MNLI.txt  
+
+
 ## Citation
 
-Please cite our paper if the paper (and code) is useful. Paper title: "An Analysis of Natural Language Inference Benchmarks through the Lens of Negation".  
+Please cite our paper if the paper (and code) is useful.   
 ```bibtex
 @inproceedings{hossain-etal-2020-analysis,
     title = "An Analysis of Natural Language Inference Benchmarks through the Lens of Negation",
