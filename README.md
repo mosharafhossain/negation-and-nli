@@ -76,9 +76,7 @@ SNLI: ./data/new_benchmarks/clean_data/SNLI.txt
 MNLI: ./data/new_benchmarks/clean_data/MNLI.txt  
 
 
-## Citation
-
-Please cite our paper if the paper (and code) is useful.   
+## Reference
 ```bibtex
 @inproceedings{hossain-etal-2020-analysis,
     title = "An Analysis of Natural Language Inference Benchmarks through the Lens of Negation",
