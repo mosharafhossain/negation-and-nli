@@ -66,11 +66,11 @@ Results (Table 7 of our paper) can be achieved by the below script.
   python evaluate.py --corpus corpus_name
 ```
   + Arguments:
-	  --corpus: Name of the corpus (e.g., rte or snli or mnli), (required)
+	  --corpus: Name of the corpus (e.g., rte or snli or mnli)
   
 
 ## New NLI benchmarks containing negation
-The annotation files for the new NLI benchmarks containing negation are given below.  
+The annotation files of the new NLI benchmarks containing negation are given below.  
 RTE: ./data/new_benchmarks/clean_data/RTE.txt  
 SNLI: ./data/new_benchmarks/clean_data/SNLI.txt  
 MNLI: ./data/new_benchmarks/clean_data/MNLI.txt  
