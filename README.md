@@ -1,16 +1,16 @@
-Negation and NLI
+Negation and Natural Language Inference
 ===================================================================
 
 ## Data Requirements
 Download RTE, SNLI, and MNLI using "download_glue_data.py" script of https://github.com/nyu-mll/GLUE-baselines.
 ```bash
 python ./data/download_glue_data.py --data_dir ./data/GLUE --tasks RTE,SNLI,MNLI
-```bash
+```
 
 ## Python Requirements
-Python 3.6+ (Recommended Python 3.7)  
+Python 3.6+ (Recommended: Python 3.7)  
 Python packages: list of packages are provided in ./env-setup/requirements.txt file.  
-(We used an older version of the huggingface transformers (version 2.1.1)).
+(We used an older version of the huggingface transformers (version 2.1.1) package).
 
 ```bash
 # Create virtual env (Assuming you have Python 3.7 installed in your machine) -> optional step
@@ -21,55 +21,55 @@ source your_location/negation-and-nli/bin/activate
 pip install -r ./env-setup/requirements.txt
 ```
 
-## Fine-tune Transformers and evaluate on original dev splits
-At first, we need to create below directories. The predicted labels are saved in "outputs/predictions" and the fine-tuned models are saved in "utputs/models" locations.
+## Fine-tune Transformer systams and evaluate on the original dev splits
+At the very begining, below directories need to be created. The predicted labels are saved in "outputs/predictions" directory and the fine-tuned models are saved in the "outputs/models" directory.
 ```bash
 mkdir outputs
 mkdir outputs/predictions
 mkdir outputs/models
 ```
 
-Fine-tune transformers using RTE training split and evaluate on RTE dev split:  
+### Fine-tune the transformers using RTE training split and evaluate on the RTE dev split:  
 ```bash
 sh rte-train.sh
 ```
-Fine-tune transformers using SNLI:  
+### Fine-tune the transformers using SNLI training split and evaluate on the SNLI dev split:
 ```bash
 sh snli-train.sh
 ```
-Fine-tune transformers using MNLI:  
+### Fine-tune the transformers using MNLI training split and evaluate on the MNLI dev split:
 ```bash
 sh mnli-train.sh
 ```
 
 ## Evaluate the fine-tuned systems on new benchmarks containing negations
-# Evaluate on new RTE benchmark 
+### Evaluate on new RTE benchmark 
 ```bash
 sh rte-evaluate.sh
 ```
-# Evaluate on new SNLI benchmark 
+###  Evaluate on new SNLI benchmark 
 ```bash
 sh snli-evaluate.sh
 ```
-# Evaluate on new MNLI benchmark 
+### Evaluate on new MNLI benchmark 
 ```bash
 sh mnli-evaluate.sh
 ```
 
 
 
-## Train/evaluate RoBERTa on SNLI
-Get the results (Table 7 in the paper)
+## Results
+Results (Table 7 of our paper) can be achieved by the below script.
 ```bash
   python evaluate.py --corpus corpus_name
 ```
   + Arguments:
-	  --corpus: Name of the corpus to show results (e.g., rte, snli, and mnli), (required)
+	  --corpus: Name of the corpus (e.g., rte or snli or mnli), (required)
   
 
 ## Citation
 
-Please cite our paper if the paper (and code) is useful to you. Paper title: "An Analysis of Natural Language Inference Benchmarks through the Lens of Negation".  
+Please cite our paper if the paper (and code) is useful. Paper title: "An Analysis of Natural Language Inference Benchmarks through the Lens of Negation".  
 ```bibtex
 @inproceedings{hossain-etal-2020-analysis,
     title = "An Analysis of Natural Language Inference Benchmarks through the Lens of Negation",
