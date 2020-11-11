@@ -1,0 +1,7 @@
+numpy
+boto3
+requests
+tqdm
+regex
+sentencepiece
+sacremoses

@@ -1,0 +1,5 @@
+data/GLUE/
+runs/
+outputs/
+batch-run.sh
+negation-and-nli.*
